@@ -23,7 +23,8 @@ export default function Analyzer() {
     formData.append('image', file);
 
     try {
-      const response = await fetch('/api/analyze', {
+      const apiUrl = import.meta.env.VITE_API_BASE_URL || '';
+      const response = await fetch(`${apiUrl}/api/analyze`, {
         method: 'POST',
         body: formData,
       });
