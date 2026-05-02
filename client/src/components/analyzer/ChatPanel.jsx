@@ -36,7 +36,8 @@ export default function ChatPanel({ product, disabled }) {
     setIsTyping(true);
 
     try {
-      const response = await fetch('/api/chat', {
+      const apiUrl = import.meta.env.VITE_API_BASE_URL || '';
+      const response = await fetch(`${apiUrl}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ product, message: userMessage })
