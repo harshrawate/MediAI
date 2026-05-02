@@ -1,5 +1,4 @@
 import { GoogleGenAI } from "@google/genai";
-import fs from "fs";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -9,11 +8,11 @@ const genAI = new GoogleGenAI({
 
 const model = "gemini-2.5-flash";
 
-export async function analyzeImage(path, tavilyData = "") {
+export async function analyzeImage(buffer, mimeType, tavilyData = "") {
   const image = {
     inlineData: {
-      data: fs.readFileSync(path).toString("base64"),
-      mimeType: "image/jpeg"
+      data: buffer.toString("base64"),
+      mimeType: mimeType
     }
   };
 

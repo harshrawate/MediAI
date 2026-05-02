@@ -10,10 +10,10 @@ function cleanJSON(text) {
 
 export const analyzeProduct = async (req, res) => {
   try {
-    const imagePath = req.file.path;
+    const { buffer, mimetype } = req.file;
 
     // Step 1: Initial analysis
-    let result = await analyzeImage(imagePath);
+    let result = await analyzeImage(buffer, mimetype);
 
     result = cleanJSON(result);
 
@@ -25,7 +25,7 @@ export const analyzeProduct = async (req, res) => {
     const tavilyData = await searchIngredients(productName);
 
     // Step 4: Final analysis with Tavily
-    result = await analyzeImage(imagePath, tavilyData);
+    result = await analyzeImage(buffer, mimetype, tavilyData);
 
     result = cleanJSON(result);
 
