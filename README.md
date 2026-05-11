@@ -1,6 +1,6 @@
 # MediAI - AI-Powered Healthcare Assistant 🩺
 
-MediAI is a modern web application designed to help users make informed decisions about the products they consume. By leveraging advanced AI and real-time web search, MediAI analyzes product ingredients from labels to provide health scores, detailed breakdowns, and personalized advice through an interactive chatbot
+MediAI is a modern web application designed to help users make informed decisions about the products they consume. By leveraging advanced AI and real-time web search, MediAI analyzes product ingredients from labels to provide health scores, detailed breakdowns, and personalized advice through an interactive chatbot.
 
 ## 🚀 Features
 
